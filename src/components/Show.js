@@ -19,7 +19,7 @@ export default function Show() {
     }
 
     return (
-        <div>
+        <div className="show">
             <h1>Now Playing</h1>
             <h3>{record.albumTitle}</h3> <br/>
             <h3>{record.artist}</h3> <br/>

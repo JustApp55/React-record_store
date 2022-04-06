@@ -17,8 +17,8 @@ export default function Create() {
         nav('/')
     }
     return (
-        <div>
-            <h1>Create Record</h1>
+        <div className="create">
+            <h1 className="crr">Create Record</h1>
             <form onSubmit={createTheRecord}>
                AlbumTitle: <input type='text' name='albumTitle' /> <br/>
                Artist: <input type='text' name='artist' /> <br/>

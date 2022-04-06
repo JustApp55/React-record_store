@@ -27,7 +27,7 @@ const editTheRecord = e => {
 }
 
     return (
-        <div>
+        <div className="edit">
             <h1>Edit Record</h1>
             <form onSubmit={editTheRecord}>
                Album Title: <input type='text' name='albumTitle' defaualValue={data.albumTitle} /> <br/>

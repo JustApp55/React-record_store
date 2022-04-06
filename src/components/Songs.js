@@ -11,9 +11,9 @@ export default function Songs() {
     console.log(label)
 
     return (
-        <div>
+        <div className="song">
             <h1 className="index">Record Labels</h1>
-            <ul>
+            <ul className="label">
                 {label.map((label) =>{
                     return(
                      <li> <a href={`/${label._id}`}> {label.albumTitle} <br/> </a>                          
