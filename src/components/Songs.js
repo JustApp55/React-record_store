@@ -17,10 +17,10 @@ export default function Songs() {
                 {label.map((label) =>{
                     return(
                      <li> <a href={`/${label._id}`}> {label.albumTitle} <br/> </a>                          
-                            {label.artist} <br/>
-                         <img style={{height:'180px', width: '180px'}} src={label.coverArt} alt="" /> <br/>
-                            {label.year} <br/>
-                            {label.genre}
+                            <h3>{label.artist}</h3> <br/>
+                         <img style={{height:'200px', width: '200px'}} src={label.coverArt} alt="" /> <br/>
+                         <h3>{label.year}</h3> <br/>
+                         <h3>{label.genre}</h3>
                      </li>
                     )
                 })}

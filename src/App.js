@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 import Songs from './components/Songs'
 import Show from './components/Show'
 import Edit from './components/Edit'
+import Create from './components/Create'
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
        <Route path='/' element={<Songs/>}/>
        <Route path='/:id' element={<Show/>}/>
        <Route path='/:id/edit' element={<Edit />} />
+       <Route path='/create' element={<Create/>}/>
       </Routes>
     </Router>
   );

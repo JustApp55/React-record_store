@@ -1,10 +1,18 @@
 import React from 'react'
 import {createRecord} from '../services/getRequests'
+import {useNavigate} from 'react-router-dom'
 
 export default function Create() {
     const nav = useNavigate()
     const createTheRecord = e => {
-        const record = {description: document.querySelector("#rcd").value}
+        const record = {
+            AlbumTitle: e.target.albumTitle.value,
+            Artist: e.target.artist.value,
+            CoverArt: e.target.artist.value,
+            year: e.target.year.value,
+            genre: e.target.genre.value
+        }
+        console.log(record)
         createRecord(record)
         nav('/')
     }
@@ -12,7 +20,11 @@ export default function Create() {
         <div>
             <h1>Create Record</h1>
             <form onSubmit={createTheRecord}>
-                <input type='text' name='description' id='rcd' />
+               AlbumTitle: <input type='text' name='albumTitle' /> <br/>
+               Artist: <input type='text' name='artist' /> <br/>
+               CoverArt <input type='text' name='coverArt' /> <br/>
+               Year: <input type='text' name='year' /> <br/>
+               Genre: <input type='text' name='genre' /> <br/>
                 <input type='submit'/>
             </form>
         </div>

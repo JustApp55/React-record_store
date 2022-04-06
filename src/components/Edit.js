@@ -15,7 +15,13 @@ useEffect(() => {
 
 const editTheRecord = e => {
     e.preventDefault()
-    const updatedRecord = {description: e.target.record.value}
+    const updatedRecord = {
+        AlbumTitle: e.target.albumTitle.value,
+        Artist: e.target.artist.value,
+        CoverArt: e.target.artist.value,
+        genre: e.target.genre.value,
+        year: e.target.year.value
+    }
     editRecord(id, updatedRecord)
     nav(`/${id}`)
 }
