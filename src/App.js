@@ -9,7 +9,7 @@ import Create from './components/Create'
 function App() {
   return (
     <Router className="App">
-       <nav>
+       <nav id="home">
          <Link to='/'>Home</Link>
        </nav>
       <Routes className="route">
@@ -21,6 +21,7 @@ function App() {
     </Router>
   );
 }
+
 
 
 export default App;

@@ -1,3 +1,4 @@
+import '../App.css'
 import React from 'react'
 import {createRecord} from '../services/getRequests'
 import {useNavigate} from 'react-router-dom'

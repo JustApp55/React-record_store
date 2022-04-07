@@ -1,3 +1,4 @@
+import '../App.css'
 import {useNavigate, useParams} from 'react-router-dom'
 import {React, useState, useEffect} from 'react'
 import { editRecord, getRecord } from '../services/getRequests'

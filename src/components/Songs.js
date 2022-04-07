@@ -1,3 +1,4 @@
+import '../App.css'
 import {useState, useEffect} from 'react'
 import { getRecords } from '../services/getRequests'
 import {useNavigate} from 'react-router-dom'
@@ -19,16 +20,18 @@ export default function Songs() {
             <ul className="label">
                 {labels.map((label) =>{
                     return(
-                     <li> <a href={`/${label._id}`}> {label.albumTitle} </a>                          
-                            <h3>{label.artist}</h3> 
-                         <img style={{height:'200px', width: '200px'}} src={label.coverArt} alt="" /> 
-                         <h3>{label.genre}</h3> 
-                         <h3>{label.year}</h3>
+                     <li className="li"> <a href={`/${label._id}`}> {label.artist} </a>                          
+                            <h3>{label.albumTitle}</h3> 
+                         <img style={{height:'250px', width: '250px'}} src={label.coverArt} alt="" /> 
+                    {/* <div className="index1">
+                         <h3>{label.genre} - </h3> 
+                         <h3 className="index2">{label.year}</h3>
+                    </div> */}
                      </li>
                     )
                 })}
             </ul>
-        </div>
+        </div> 
     )
 
 }
