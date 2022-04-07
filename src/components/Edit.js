@@ -11,17 +11,19 @@ useEffect(() => {
     getRecord(id)
     .then(res => setData(res.data))
 }, [])
-console.log(data)
+
 
 const editTheRecord = e => {
     e.preventDefault()
+    console.log("editRecord")
     let updatedRecord = {
         artist: e.target.artist.value,
         albumTitle: e.target.albumTitle.value,
-        coverArt: e.target.artist.value,
+        coverArt: e.target.coverArt.value,
         genre: e.target.genre.value,
         year: e.target.year.value
     }
+    console.log(updatedRecord)
     editRecord(id, updatedRecord)
     nav(`/${id}`)
  }
@@ -34,7 +36,7 @@ const editTheRecord = e => {
                Album Title: <input type='text' name='albumTitle' defaultValue={data.albumTitle} /> <br/>
                Cover Art: <input type='text' name='coverArt' defaultValue={data.coverArt} /> <br/>
                Genre: <input type='text' name='genre' defaultValue={data.genre} /> <br/>
-               Year: <input type='text' name='year' defaultValue={data.year} /> <br/>
+               Year: <input type='number' name='year' defaultValue={data.year} /> <br/>
                 <input type='submit' value='Update Record' />
             </form>
         </div>
