@@ -23,10 +23,7 @@ export default function Songs() {
                      <li className="li"> <a href={`/${label._id}`}> {label.artist} </a>                          
                             <h3>{label.albumTitle}</h3> 
                          <img style={{height:'250px', width: '250px'}} src={label.coverArt} alt="" /> 
-                    {/* <div className="index1">
-                         <h3>{label.genre} - </h3> 
-                         <h3 className="index2">{label.year}</h3>
-                    </div> */}
+   
                      </li>
                     )
                 })}
