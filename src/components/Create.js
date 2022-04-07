@@ -6,11 +6,11 @@ export default function Create() {
     const nav = useNavigate()
     const createTheRecord = e => {
         const record = {
-            AlbumTitle: e.target.albumTitle.value,
-            Artist: e.target.artist.value,
-            CoverArt: e.target.artist.value,
-            year: e.target.year.value,
-            genre: e.target.genre.value
+            artist: e.target.artist.value,
+            albumTitle: e.target.albumTitle.value,
+            coverArt: e.target.artist.value,
+            genre: e.target.genre.value,
+            year: e.target.year.value
         }
         console.log(record)
         createRecord(record)
@@ -19,13 +19,13 @@ export default function Create() {
     return (
         <div className="create">
             <h1 className="crr">Create Record</h1>
-            <form onSubmit={createTheRecord}>
-               AlbumTitle: <input type='text' name='albumTitle' /> <br/>
+            <form onSubmit={createTheRecord} id="new">
                Artist: <input type='text' name='artist' /> <br/>
+               AlbumTitle: <input type='text' name='albumTitle' /> <br/>
                CoverArt <input type='text' name='coverArt' /> <br/>
-               Year: <input type='text' name='year' /> <br/>
                Genre: <input type='text' name='genre' /> <br/>
-                <input type='submit'/>
+               Year: <input type='text' name='year' /> <br/>
+                <input type='submit' value='New Record'/>
             </form>
         </div>
     )

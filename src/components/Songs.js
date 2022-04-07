@@ -1,26 +1,29 @@
 import {useState, useEffect} from 'react'
 import { getRecords } from '../services/getRequests'
+import {useNavigate} from 'react-router-dom'
 
 export default function Songs() {
-    const [label, setLabel] = useState([])
+    const nav = useNavigate()
+    const [labels, setLabels] = useState([])
 
     useEffect(() =>{
         getRecords()
-        .then(res => setLabel(res.data))
+        .then(res => setLabels(res.data))
     }, [])
-    console.log(label)
+    console.log(labels)
 
     return (
         <div className="song">
             <h1 className="index">Record Labels</h1>
+                <button onClick={()=> {nav("/create")}} >New Record</button>
             <ul className="label">
-                {label.map((label) =>{
+                {labels.map((label) =>{
                     return(
-                     <li> <a href={`/${label._id}`}> {label.albumTitle} <br/> </a>                          
-                            <h3>{label.artist}</h3> <br/>
-                         <img style={{height:'200px', width: '200px'}} src={label.coverArt} alt="" /> <br/>
-                         <h3>{label.year}</h3> <br/>
-                         <h3>{label.genre}</h3>
+                     <li> <a href={`/${label._id}`}> {label.albumTitle} </a>                          
+                            <h3>{label.artist}</h3> 
+                         <img style={{height:'200px', width: '200px'}} src={label.coverArt} alt="" /> 
+                         <h3>{label.genre}</h3> 
+                         <h3>{label.year}</h3>
                      </li>
                     )
                 })}
